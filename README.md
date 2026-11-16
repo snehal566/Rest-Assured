@@ -4,7 +4,7 @@ Automated API testing framework built with Java, REST Assured, and Maven.
 
 ## Tech Stack
 * **Language:** Java
-* **Testing Framework:** TestNG / JUnit *(keep whichever you used)*
+* **Testing Framework:** TestNG 
 * **API Client:** REST Assured
 * **Build Tool:** Maven
 
@@ -12,6 +12,7 @@ Automated API testing framework built with Java, REST Assured, and Maven.
 ```text
 RESTAssuredAutomation/
 ├── src/
-│  │   └── test/java/       # API test suites 
+│   ├── main/java/       # Base configurations, utilities, and POJOs
+│   └── test/java/       # API test suites and step definitions
 ├── pom.xml              # Maven dependencies and build configuration
 └── README.md
