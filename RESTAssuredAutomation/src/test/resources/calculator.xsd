@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" 
+           attributeFormDefault="unqualified"
+           elementFormDefault="qualified"
+           targetNamespace="http://tempuri.org/"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+
+    <!-- Import the SOAP namespace without a remote schemaLocation to avoid network blocks -->
+    <xs:import namespace="http://schemas.xmlsoap.org/soap/envelope/"/> 
+
+    <!-- Define the root SOAP Envelope structure -->
+    <xs:element name="Envelope" soap:actor="http://schemas.xmlsoap.org/soap/actor/next">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Body">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <!-- This matches your service's actual response payload -->
+                            <xs:element ref="tns:AddResponse" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- Your specific response element -->
+    <xs:element name="AddResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="AddResult" type="xs:string" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
